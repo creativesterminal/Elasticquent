@@ -336,6 +336,8 @@ trait ElasticquentTrait
         // Get our document body data.
         $params['body']['doc'] = $this->getIndexDocumentData();
 
+        $params['doc_as_upsert'] = true;
+
         return $this->getElasticSearchClient()->update($params);
     }
 
